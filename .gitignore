@@ -142,6 +142,7 @@ cython_debug/
 
 # Custom files
 run.py
+config.json
 chromedriver*
 
 # Folders
