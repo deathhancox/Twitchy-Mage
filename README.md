@@ -18,7 +18,7 @@
 </p>
 
 
-<h1 align="center">https://github.com/rdavydov/Twitch-Channel-Points-Miner-v2</h1>
+<h1 align="center">Forked From: https://github.com/rdavydov/Twitch-Channel-Points-Miner-v2</h1>
 
 **Credits**
 - Main idea: https://github.com/gottagofaster236/Twitch-Channel-Points-Miner
@@ -73,19 +73,10 @@ If you want to offer me a coffee, I would be grateful! ❤️
 
 If you have any issues or you want to contribute, you are welcome! But please read the [CONTRIBUTING.md](https://github.com/rdavydov/Twitch-Channel-Points-Miner-v2/blob/master/CONTRIBUTING.md) file.
 
-## Main differences from the original repository:
+## Main differences from the forked repository:
 
-- Improved logging: emojis, colors, files and much more ✔️
-- Final report with all the data ✔️
-- Rewritten codebase now uses classes instead of modules with global variables ✔️
-- Automatic downloading of the list of followers and using it as an input ✔️
-- Better 'Watch Streak' strategy in the priority system [#11](https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2/issues/11) ✔️
-- Auto claiming [game drops](https://help.twitch.tv/s/article/mission-based-drops) from the Twitch inventory [#21](https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2/issues/21) ✔️
-- Placing a bet / making a prediction with your channel points [#41](https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2/issues/41) ([@lay295](https://github.com/lay295)) ✔️
-- Switchable analytics chart that shows the progress of your points with various annotations [#96](https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2/issues/96) ✔️
-- Joining the IRC Chat to increase the watch time and get StreamElements points [#47](https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2/issues/47) ✔️
-- [Moments](https://help.twitch.tv/s/article/moments) claiming [#182](https://github.com/rdavydov/Twitch-Channel-Points-Miner-v2/issues/182) ✔️
-- Notifying on `@nickname` mention in the Twitch chat [#227](https://github.com/rdavydov/Twitch-Channel-Points-Miner-v2/issues/227) ✔️
+- Added detail/streamer config file integration ✔️
+- Tweaked general settings to make more customizable ✔️
 
 ## Logs feature
 ### Full logs
@@ -547,6 +538,7 @@ Webhook(
 
 
 #### Events
+ - `MINER_START`
  - `STREAMER_ONLINE`
  - `STREAMER_OFFLINE`
  - `GAIN_FOR_RAID`
