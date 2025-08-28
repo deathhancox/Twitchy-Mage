@@ -13,7 +13,16 @@ class Discord(object):
         self.events = [str(e) for e in events]
 
     def send(self, message: str, event: Events) -> None:
-        if str(event) in self.events:
+        if str(event) == "MINER_START":
+            requests.post(
+                url=self.webhook_api,
+                data={
+                    "content": "## -- New Session Created --",
+                    "username": "Twitchy Mage",
+                    "avatar_url": "",
+                },
+            )
+        elif str(event) in self.events:
             requests.post(
                 url=self.webhook_api,
                 data={

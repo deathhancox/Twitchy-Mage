@@ -25,6 +25,7 @@ class Settings(object):
 
 
 class Events(Enum):
+    MINER_START = auto()
     STREAMER_ONLINE = auto()
     STREAMER_OFFLINE = auto()
     GAIN_FOR_RAID = auto()

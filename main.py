@@ -30,7 +30,7 @@ streamers = configData["streamers"]
 twitch_miner = TwitchChannelPointsMiner(
     username = configData["userdata"]["username"],
     password = configData["userdata"]["password"],           # If no password will be provided, the script will ask interactively
-    claim_drops_startup=False,                  # If you want to auto claim all drops from Twitch inventory on the startup
+    claim_drops_startup=True,                  # If you want to auto claim all drops from Twitch inventory on the startup
     priority=[                                  # Custom priority in this case for example:
         Priority.STREAK,                        # - We want first of all to catch all watch streak from all streamers
         Priority.DROPS,                         # - When we don't have anymore watch streak to catch, wait until all drops are collected over the streamers
@@ -40,7 +40,7 @@ twitch_miner = TwitchChannelPointsMiner(
     disable_ssl_cert_verification=False,        # Set to True at your own risk and only to fix SSL: CERTIFICATE_VERIFY_FAILED error
     disable_at_in_nickname=True,                # Set to True if you want to check for your nickname mentions in the chat even without @ sign
     logger_settings=LoggerSettings(
-        save=True,                              # If you want to save logs in a file (suggested)
+        save=False,                              # If you want to save logs in a file (suggested)
         console_level=logging.INFO,             # Level of logs - use logging.DEBUG for more info
         console_username=False,                 # Adds a username to every console log line if True. Also adds it to Telegram, Discord, etc. Useful when you have several accounts
         auto_clear=True,                        # Create a file rotation handler with interval = 1D and backupCount = 7 if True (default)
@@ -63,8 +63,10 @@ twitch_miner = TwitchChannelPointsMiner(
         ),
         discord=Discord(
             webhook_api = configData["webhooks"]["discord"],  # Discord Webhook URL
-            events=[Events.STREAMER_ONLINE, Events.STREAMER_OFFLINE,
-                    Events.BET_LOSE, Events.CHAT_MENTION],                                  # Only these events will be sent to the chat
+            events=[Events.STREAMER_ONLINE,
+                    Events.BET_LOSE, Events.CHAT_MENTION, Events.MINER_START],                                    # Only these events will be sent to the chat
+            # events=[Events.STREAMER_ONLINE, Events.STREAMER_OFFLINE,
+            #         Events.BET_LOSE, Events.CHAT_MENTION],                                  # Only these events will be sent to the chat
         ),
         webhook=Webhook(
             endpoint="https://example.com/webhook",                                                                    # Webhook URL

@@ -18,7 +18,7 @@ from TwitchChannelPointsMiner.classes.entities.Streamer import (
     StreamerSettings,
 )
 from TwitchChannelPointsMiner.classes.Exceptions import StreamerDoesNotExistException
-from TwitchChannelPointsMiner.classes.Settings import FollowersOrder, Priority, Settings
+from TwitchChannelPointsMiner.classes.Settings import Events, FollowersOrder, Priority, Settings
 from TwitchChannelPointsMiner.classes.Twitch import Twitch
 from TwitchChannelPointsMiner.classes.WebSocketsPool import WebSocketsPool
 from TwitchChannelPointsMiner.logger import LoggerSettings, configure_loggers
@@ -221,7 +221,10 @@ class TwitchChannelPointsMiner:
             logger.error("You can't start multiple sessions of this instance!")
         else:
             logger.info(
-                f"Start session: '{self.session_id}'", extra={"emoji": ":bomb:"}
+                f"Start session: '{self.session_id}'", extra={
+                    "emoji": ":bomb:",
+                    "event": Events.MINER_START,
+                }
             )
             self.running = True
             self.start_datetime = datetime.now()
