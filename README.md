@@ -62,7 +62,7 @@ Read more about the channel points [here](https://help.twitch.tv/s/article/chann
 ## Community
 If you want to help with this project, please leave a star 🌟 and share it with your friends! 😎
 
-If you want to offer me a coffee, I would be grateful! ❤️
+If you want to offer the creator a coffee, I'm sure they would be grateful! ❤️
 
 |                                                                                                                                                                                                                                                                                                           |                                               |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
